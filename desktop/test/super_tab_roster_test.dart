@@ -304,7 +304,10 @@ void main() {
     expect(f.row(2), findsNothing);
     for (final i in [0, 1, 3]) {
       expect(f.inRow(i, find.byType(SuperTabAvatar)), findsOneWidget);
-      expect(f.inRow(i, find.text(i == 0 ? 'PM' : 'Dev')), findsOneWidget);
+      expect(
+        f.inRow(i, find.text(i == 0 ? 'Lead' : 'Builder')),
+        findsOneWidget,
+      );
       expect(f.inRow(i, find.text('openharness')), findsOneWidget);
     }
     expect(find.text('Join Super Tab roster'), findsNothing);

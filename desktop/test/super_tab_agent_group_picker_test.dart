@@ -127,7 +127,7 @@ void main() {
     expect(find.text('Open Nova'), findsOneWidget);
     expect(selected(tester, 'offline'), isTrue);
     expect(find.text('#12 Offline editing'), findsOneWidget);
-    expect(find.text('Product Manager'), findsOneWidget);
+    expect(find.text('Lead'), findsOneWidget);
     await tester.tap(row('lead'));
     await tester.pump();
     expect(selected(tester, 'lead'), isTrue);

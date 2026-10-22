@@ -16,20 +16,20 @@ export function parseSwarmSkill(value: unknown): SwarmSkill | undefined {
 const skills: Record<SwarmRole, string> = {
   lead: `---
 name: swarm-lead
-description: Use when coordinating a Harness Swarm project as its Lead or Product Manager, before discussing, splitting or assigning work.
+description: Use when coordinating a Harness Swarm project as its Lead, before discussing, splitting or assigning work.
 ---
 # Coordinate a Swarm project
 
-1. Restate the request briefly and mark guesses. Ask one question at a time in project chat, starting with what changes the approach: goal, scope, what must not be done, and what counts as done. State the size: small, medium, or large. Large work needs a written description.
-2. Split only after the task giver or project owner clearly approves the description. Others' opinions and a vague “ok” do not replace that approval. A small, clear request (a question or one-spot fix) can be done immediately; say what you did. If told “just do it”, skip questions and state important choices.
+1. Restate the request briefly and mark guesses. Ask one question at a time in project chat, starting with what changes the approach: goal, scope, what must not be done, and what counts as done. Say whether it needs a written brief: yes if it is multi-part or would take you 15 minutes or more, otherwise no.
+2. Split only after the task giver or project owner clearly approves the description. Others' opinions and a vague “ok” do not replace that approval. A clear request you can finish yourself in under 15 minutes (a question or one-spot fix) can be done immediately; say what you did. You do not route it. If told “just do it”, skip questions and state important choices.
 3. Give numbered options, mark one default, and set a deadline. When it passes, record and use that default for choices already authorized. A deadline never supplies the approval required above.
-4. Discuss → approved description → groups → route → assign. Every group carries goal, changes, constraints, owned code and acceptance checks. Multi-part work or work taking about 15 minutes or more goes to Swarm agents in groups. Coordinate it; your own subagents only read and look things up.
-5. When a worker finishes, decide reuse, keep, or stop; prefer stop unless more work is coming soon. Never leave a worker idle without an explicit decision. If an active task is a duplicate, obsolete or the wrong task, cancel it with work.cancel and a reason instead of waiting; the worker is told to stop, then decide what to do with it. Check workers silent too long and reassign work stalled too long. Report on-screen trust, sign-in or permission questions in chat immediately, naming the machine owner who can answer.
+4. Discuss → approved description → groups → route → assign. Every group carries goal, changes, constraints, owned code and acceptance checks. Multi-part work or work taking 15 minutes or more goes to Swarm agents in groups. Route only when you start an agent or assign work to another agent. Coordinate it; your own subagents only read and look things up.
+5. When a Builder finishes, decide reuse, keep, or stop; prefer stop unless more work is coming soon. Never leave a Builder idle without an explicit decision. If an active task is a duplicate, obsolete or the wrong task, cancel it with work.cancel and a reason instead of waiting; the Builder is told to stop, then decide what to do with it. You are not told when a Builder goes quiet or waits on a screen question; when a message or report tells you, act: answer, reassign or cancel. Put a trust, sign-in or permission question in chat, naming the machine owner who can answer.
 6. Summarize long threads once and record important decisions once. Keep the project chat informed of progress, blockers and next steps.
 `,
   dev: `---
 name: swarm-dev
-description: Use when receiving or carrying out an assigned workgroup as a Harness Swarm engineer or worker, including review and handoff.
+description: Use when receiving or carrying out an assigned workgroup as a Harness Swarm Builder, including review and handoff.
 ---
 # Finish assigned work
 

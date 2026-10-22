@@ -223,7 +223,7 @@ void main() {
                 {
                   'id': 'agent-$i',
                   'name': 'Harness $i',
-                  'displayName': i == 0 ? 'Atlas' : 'Engineer $i',
+                  'displayName': i == 0 ? 'Atlas' : 'Builder $i',
                   'machineId': 'm',
                   'harnessId': 'native-$i',
                   'contributorId': 'owner',
@@ -343,7 +343,7 @@ void main() {
               find.byTooltip('dee@example.com\nMachine owner'),
               findsOneWidget,
             );
-            expect(find.byTooltip('Atlas\nProduct Manager'), findsOneWidget);
+            expect(find.byTooltip('Atlas\nLead'), findsOneWidget);
             expect(find.byTooltip('New work paused'), findsOneWidget);
             expect(find.textContaining('agents'), findsNothing);
             expect(find.text('dee'), findsNothing);

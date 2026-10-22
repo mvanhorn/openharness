@@ -104,7 +104,7 @@ Future<void> showProjectAction(
                       ],
                       if (action == 'cadence') ...[
                         Text(
-                          'The product manager consolidates new workgroup reports while work is active.',
+                          'The Lead consolidates new workgroup reports while work is active.',
                           style: DesktopChrome.text(),
                         ),
                         const SizedBox(height: 12),
@@ -136,7 +136,7 @@ Future<void> showProjectAction(
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          group?.brief.isNotEmpty == true ? group!.brief : 'Discuss the project with its product manager to define the work.',
+                          group?.brief.isNotEmpty == true ? group!.brief : 'Discuss the project with its Lead to define the work.',
                           style: DesktopChrome.text(),
                         ),
                         const SizedBox(height: 16),
@@ -147,10 +147,7 @@ Future<void> showProjectAction(
                               'Not set',
                         ),
                         const SizedBox(height: 16),
-                        Text(
-                          'Product Manager',
-                          style: DesktopChrome.metadata(),
-                        ),
+                        Text('Lead', style: DesktopChrome.metadata()),
                         Text(
                           group?.leadId == null
                               ? 'Starting…'

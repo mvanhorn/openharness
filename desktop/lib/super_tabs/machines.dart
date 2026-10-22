@@ -530,7 +530,7 @@ class _SuperTabMachinesState extends State<SuperTabMachines> {
                       const SizedBox(height: 16),
                       if (own.isNotEmpty)
                         Text(
-                          'Let the product manager run agents here using this machine’s signed-in accounts.',
+                          'Let the Lead run agents here using this machine’s signed-in accounts.',
                           style: DesktopChrome.text(),
                         ),
                       if (own.isNotEmpty) ...[
@@ -788,9 +788,7 @@ class _SuperTabMachinesState extends State<SuperTabMachines> {
             (
               id: agent.id,
               name: c.snapshot!.agentName(agent.id),
-              role: c.snapshot!.isLead(agent.id)
-                  ? 'Product Manager'
-                  : 'Engineer',
+              role: c.snapshot!.isLead(agent.id) ? 'Lead' : 'Builder',
             ),
         ],
         status: status,
@@ -1004,7 +1002,7 @@ class _SuperTabMachinesState extends State<SuperTabMachines> {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
             child: Text(
-              'Add a machine for the product manager to use.',
+              'Add a machine for the Lead to use.',
               style: DesktopChrome.metadata(),
             ),
           )

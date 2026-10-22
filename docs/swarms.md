@@ -4,7 +4,7 @@ A Swarm is an invite-only collaborative tab. Regular tabs and multiple Swarms
 share the existing tab bar. Each Swarm contains projects, people, agents and
 contributed machines.
 
-![A project lead chat, expandable workgroups and shared resources](images/swarms/projects.png)
+![A project Lead chat, expandable workgroups and shared resources](images/swarms/projects.png)
 
 This screenshot uses fixture conversations and resources.
 
@@ -16,15 +16,15 @@ write the request, and choose the project's visibility. Store uses
 **Cmd-Control-S**.
 
 Use **+ Project** in the left sidebar to create another project in the current
-Swarm. It uses the same form and creates a separate lead session. Clicking a
-project name opens its lead chat. Its chevron expands numbered workgroups.
-The lead can create and coordinate those workgroups; people usually work
-through the project lead.
+Swarm. It uses the same form and creates a separate Lead session. Clicking a
+project name opens its Lead chat. Its chevron expands numbered workgroups.
+The Lead can create and coordinate those workgroups; people usually work
+through the project Lead.
 
 The center toolbar switches between chat, terminals and pull requests. The
 project's vertical menu contains rename, details, sharing, update cadence and
 Swarm routing. A workgroup keeps its own details, rename and archive actions.
-Pull requests in a project lead view include that project's workgroups.
+Pull requests in a project Lead view include that project's workgroups.
 
 ## People, agents and machines
 
@@ -40,9 +40,9 @@ Each section's plus button has one purpose:
 A machine contribution is a workspace grant for this Swarm. The host prepares
 each project's repository before starting an agent. A project on another
 machine needs a shared GitHub repository; a local-only folder is not silently
-replaced with an unrelated directory. The project records its lead checkout's
-GitHub `origin` as an HTTPS address when the lead starts. If a project has no
-address yet, its owner or lead can share one once with `project.repository`.
+replaced with an unrelated directory. The project records its Lead checkout's
+GitHub `origin` as an HTTPS address when the Lead starts. If a project has no
+address yet, its owner or Lead can share one once with `project.repository`.
 An address that is already shared is not replaced.
 
 Each host clones with its owner's own GitHub access; Harness never passes
@@ -51,9 +51,9 @@ tries the other transport (HTTPS or SSH) once. For a private repository, every
 contributing owner needs access to it on that machine, either through
 `gh auth login` and `gh auth setup-git` or through an SSH key.
 
-The lead starts new agents only on the Swarm's listed machines: every
+The Lead starts new agents only on the Swarm's listed machines: every
 contributed machine, plus every machine an agent of the Swarm already runs on
-(the lead's own machine is always one of them). To make another machine
+(the Lead's own machine is always one of them). To make another machine
 available, a person adds it to the Swarm under Machines; the host then clones
 the project there.
 
@@ -64,13 +64,13 @@ repository's default branch (`origin/HEAD`, else `origin/main` or
 `origin/master`), fetched first, rather than on whatever commit the checkout was
 left on. If the fetch fails (offline, access refused), the worktree starts from
 the copy of that branch the checkout already has; a repository with no `origin`
-default branch starts from the checkout's current commit, as before. The lead
+default branch starts from the checkout's current commit, as before. The Lead
 passes `branchRef` (`refs/remotes/origin/BRANCH`, fetched first, or
 `refs/heads/BRANCH`) to start from another branch, such as the integration
 branch the work builds on. This is the Swarm start only: New Harness in Desktop
 and the CLI still starts from the folder's current commit unless a branch is
-chosen. On the lead's own machine the same rule applies, so work that is only in
-the lead's checkout (unpushed commits) reaches a Builder through `branchRef`.
+chosen. On the Lead's own machine the same rule applies, so work that is only in
+the Lead's checkout (unpushed commits) reaches a Builder through `branchRef`.
 
 A machine contribution accepts a start in the folder this project uses on that
 machine, with one of the engines its owner contributed and the owner's default
@@ -115,7 +115,7 @@ arrive. The Desktop log (`app-*.log`, category `swarm`) records how long each re
 Swarm's state took and when one failed, without what it said.
 
 Ordinary guest machine sharing does not authorize Swarm controls under the
-owner's account. The owner contributes the machine or an agent. The lead's
+owner's account. The owner contributes the machine or an agent. The Lead's
 routing policy still determines eligible engines, capacity and model choices.
 
 Clicking an agent with one workgroup opens its terminal. If it participates in
@@ -146,11 +146,11 @@ trusted execution hosts and can access work running on their computers.
 
 The default update cadence is five minutes; the project menu also offers one,
 fifteen and thirty minutes. New workgroup reports mark the project for an update.
-The existing delivery poll asks its lead to consolidate those reports at its
+The existing delivery poll asks its Lead to consolidate those reports at its
 next natural checkpoint. Idle projects do not generate scheduled updates, and
 an outstanding request prevents duplicates.
 
-The lead uses `project.report` to acknowledge the request and post a useful
+The Lead uses `project.report` to acknowledge the request and post a useful
 summary, or `text: null` when nothing merits another message. Human questions,
 serious blockers and completion are reported immediately. This does not start
 a second summarizing model or forward every terminal turn.

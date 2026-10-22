@@ -122,9 +122,7 @@ class _SuperTabAgentGroupPickerState extends State<SuperTabAgentGroupPicker> {
     final snapshot = widget.controller.snapshot!;
     final selected = group.id == _selectedId;
     final project = snapshot.projectFor(group.id);
-    final label = snapshot.isProjectLead(group.id)
-        ? 'Product Manager'
-        : group.label;
+    final label = snapshot.isProjectLead(group.id) ? 'Lead' : group.label;
     final ink = selected ? DesktopChrome.onSelection : DesktopChrome.foreground;
     return Padding(
       key: _rows.putIfAbsent(group.id, GlobalKey.new),

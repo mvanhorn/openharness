@@ -847,7 +847,7 @@ void main() {
   );
 
   for (final engine in ['claude', 'codex']) {
-    test('a Desktop $engine Swarm worker gets the DEV role', () async {
+    test('a Desktop $engine Swarm Builder gets the dev role', () async {
       final f = SuperTabLaunchFixture();
       f.app.bindSuperTab(f.app.activeSwarmId, tabId, 'Company');
       final box = await f.box(engine: engine);
@@ -869,6 +869,10 @@ void main() {
                 .firstWhere((c) => c.$1 == 'agent_create')
                 .$2['prompt']
             as String;
+    expect(
+      prompt,
+      contains('Route only to start an agent or assign work, never your own'),
+    );
     expect(prompt, contains('route GROUP'));
     expect(prompt, contains('size (small, medium or large)'));
     expect(prompt, contains('routeDecisionId'));

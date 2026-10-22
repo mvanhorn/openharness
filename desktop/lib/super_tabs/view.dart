@@ -1091,7 +1091,7 @@ class _SuperTabViewState extends State<SuperTabView>
                         : group == null
                         ? 'Loading conversation…'
                         : c.snapshot!.isProjectLead(group.id)
-                        ? 'Discuss the plan with your product manager.'
+                        ? 'Discuss the plan with the Lead.'
                         : 'Start the conversation.',
                     style: DesktopChrome.text(color: DesktopChrome.muted),
                   ),
@@ -1449,7 +1449,7 @@ class _SuperTabViewState extends State<SuperTabView>
                                           ? 'Loading conversation…'
                                           : c.canWrite
                                           ? c.snapshot!.isProjectLead(group.id)
-                                                ? 'Message Product Manager'
+                                                ? 'Message Lead'
                                                 : 'Message ${group.title}'
                                           : 'Read-only conversation',
                                       border: InputBorder.none,

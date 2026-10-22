@@ -51,7 +51,7 @@ class _SuperTabRosterState extends State<SuperTabRoster> {
             ?.projectId;
 
   String _role(SuperTabAgent agent) =>
-      c.snapshot!.isLead(agent.id) ? 'Product Manager' : 'Engineer';
+      c.snapshot!.isLead(agent.id) ? 'Lead' : 'Builder';
 
   bool _canRemove(SuperTabAgent agent) =>
       c.canWrite && (c.isOwner || agent.contributorId == c.accountId);
@@ -320,7 +320,7 @@ class _SuperTabRosterState extends State<SuperTabRoster> {
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Text(
-                          c.snapshot!.isLead(agent.id) ? 'PM' : 'Dev',
+                          c.snapshot!.isLead(agent.id) ? 'Lead' : 'Builder',
                           style: DesktopChrome.metadata(),
                         ),
                       ),

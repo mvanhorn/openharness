@@ -54,9 +54,9 @@ and **Browser**. Technical documentation may still call the terminal interface a
 | **A harness** in the Store | A reusable setup containing agent instructions, tools, and an optional viewer. | Install the Blender harness. |
 | **Tab** | A workspace group of harnesses. | Frontend and Backend tabs. |
 | **Swarm** | A collaborative tab containing projects, people, agents and contributed machines. Invite-only by default; its owner can enable joining by email domain or a shared link. | Open your company Swarm beside your regular tabs. |
-| **Project in a Swarm** | An initiative with its own product manager, repository, sharing and workgroups. | Discuss Lamp OS with its product manager; expand it to follow a workgroup. |
-| **Product Manager** | The agent coordinating a Swarm project. Use **PM** in a compact role badge. | Message Product Manager. |
-| **Engineer** | An agent carrying out project work. Use **Dev** in a compact role badge. | Atlas is an engineer on Lamp OS. |
+| **Project in a Swarm** | An initiative with its own Lead, repository, sharing and workgroups. | Discuss Lamp OS with its Lead; expand it to follow a workgroup. |
+| **Lead** | The agent coordinating a Swarm project. It does only work under 15 minutes itself and routes the rest to Builders. The role badge says **Lead**. | Message Lead. |
+| **Builder** | An agent carrying out assigned project work. The role badge says **Builder**. Do not say Product Manager, PM, Engineer, Dev or worker in visible copy. | Atlas is a Builder on Lamp OS. |
 | **Workgroup** | A numbered conversation for an independently assignable outcome within a project. | Follow #12 Offline editing. |
 | **Pane** | A visible view of a harness, terminal, or viewer. | Split right; close pane. |
 | **Terminal** | A shell for entering commands. | New terminal. |
@@ -84,11 +84,11 @@ no CLI keeps its maker's name (Fo).
 A pane is a view, so closing a pane or tab closes views. **Stop Harness** ends the
 running harness. Adding harnesses to a tab groups them without a separate team
 setup. A **Swarm** occupies one tab in that same tab bar. A person can belong to several Swarms.
-Its project names open their product manager chats; a separate chevron reveals each project's workgroups.
+Its project names open their Lead chats; a separate chevron reveals each project's workgroups.
 An expanded project without workgroups says **No workgroups yet**. **Your devices** opens the
 existing Devices tab. The navigation, conversation and people panes have draggable dividers.
 Agents have individual display names and the same avatar treatment as people. Their role badges
-are **PM** and **Dev**; project context appears underneath. Engine names belong in details.
+are **Lead** and **Builder**; project context appears underneath. Engine names belong in details.
 Chat headings and quoted replies use the same current agent identity as the roster, including
 older messages. When an agent has left, its recorded author name remains available in history.
 Machine rows reuse the owner's and agents' avatars, keep known capacity and allowances visible,
