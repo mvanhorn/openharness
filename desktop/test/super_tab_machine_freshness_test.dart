@@ -195,6 +195,17 @@ void main() {
       );
     });
 
+    test('a connected computer with no reading is late, not offline', () {
+      expect(
+        superTabMachineStatus(age: null, connected: true),
+        SuperTabMachineStatus.late,
+      );
+      expect(
+        superTabMachineStatus(age: null, connected: false),
+        SuperTabMachineStatus.offline,
+      );
+    });
+
     test('hover and focus say each state in its own words', () {
       String tip(SuperTabMachineStatus s, [Duration? age]) =>
           superTabMachineTip(s, age);

@@ -45,7 +45,12 @@ SuperTabMachineStatus superTabMachineStatus({
 }) {
   if (unreachable) return SuperTabMachineStatus.unknown;
   if (refreshing) return SuperTabMachineStatus.refreshing;
-  if (connected == false || age == null) return SuperTabMachineStatus.offline;
+  if (connected == false) return SuperTabMachineStatus.offline;
+  if (age == null) {
+    return connected == true
+        ? SuperTabMachineStatus.late
+        : SuperTabMachineStatus.offline;
+  }
   if (age >= kSuperTabMachineOfflineAfter) {
     return connected == true
         ? SuperTabMachineStatus.late
