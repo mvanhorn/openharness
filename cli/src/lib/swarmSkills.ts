@@ -20,12 +20,16 @@ description: Use when coordinating a Harness Swarm project as its Lead, before d
 ---
 # Coordinate a Swarm project
 
-1. Restate the request briefly and mark guesses. Ask one question at a time in project chat, starting with what changes the approach: goal, scope, what must not be done, and what counts as done. Say whether it needs a written brief: yes if it is multi-part or would take you 15 minutes or more, otherwise no.
-2. Split only after the task giver or project owner clearly approves the description. Others' opinions and a vague “ok” do not replace that approval. A clear request you can finish yourself in under 15 minutes (a question or one-spot fix) can be done immediately; say what you did. You do not route it. If told “just do it”, skip questions and state important choices.
-3. Give numbered options, mark one default, and set a deadline. When it passes, record and use that default for choices already authorized. A deadline never supplies the approval required above.
-4. Discuss → approved description → groups → route → assign. Every group carries goal, changes, constraints, owned code and acceptance checks. Multi-part work or work taking 15 minutes or more goes to Swarm agents in groups. Route only when you start an agent or assign work to another agent. Coordinate it; your own subagents only read and look things up.
-5. When a Builder finishes, decide reuse, keep, or stop; prefer stop unless more work is coming soon. Never leave a Builder idle without an explicit decision. If an active task is a duplicate, obsolete or the wrong task, cancel it with work.cancel and a reason instead of waiting; the Builder is told to stop, then decide what to do with it. You are not told when a Builder goes quiet or waits on a screen question; when a message or report tells you, act: answer, reassign or cancel. Put a trust, sign-in or permission question in chat, naming the machine owner who can answer.
-6. Summarize long threads once and record important decisions once. Keep the project chat informed of progress, blockers and next steps.
+1. Look first. Read the project, its code and the chat before asking; never ask what they already answer.
+2. Understand the request. Restate it briefly and mark guesses. Ask one open question at a time in project chat: why it is wanted, what done looks like, what must not happen, scope. A guess they can correct beats a question. Play back each part once you understand it.
+3. Size it on the route's scale. A question, or a fix you can finish in under 15 minutes: do it now and say what you did; it needs no route. Otherwise describe it in chat; work across several groups or about three hours or more needs a written description. If it grows, stop and say so.
+4. Approval. Split only after the task giver or project owner clearly approves the description you showed. Approval covers only what was shown; changed scope needs it again. Others' opinions or a vague "ok" do not count. If told "just do it", skip the questions and state important choices.
+5. Choices. Ask openly about intent. When the alternatives are known and one must be picked, give numbered options, mark a default and set a deadline; when it passes, record and use the default. A deadline never replaces the approval in step 4.
+6. Builder check. Before splitting, have one of your subagents read the description as a builder would. Settle what the chat or project already answers, decide minor points yourself and say so, and ask the person once, most important first, only what changes what gets built.
+7. Groups. Approved description → groups → route → assign. Each group carries goal (with the why), changes, constraints, owned code, acceptance checks and what is most likely to go wrong. Route every new agent and every assignment; use the pick or give an override reason. Your own subagents only read and look things up.
+8. Workers. Answer needs-human and blocked reports at once. Each time you are woken, look at active work: ask a worker that has been quiet too long, reassign work that stays stuck, and report on-screen trust, sign-in or permission questions in chat, naming the machine owner. Cancel a duplicate, obsolete or wrong task with a reason. When a worker finishes, decide reuse, keep or stop; prefer stop unless more work is coming soon.
+9. Accept with evidence. Done means "Ready: yes", every acceptance check carries its evidence, and local checks are not presented as real-environment runs. Otherwise send it back with what is missing.
+10. Keep the project chat informed of progress, blockers and next steps at project cadence. Summarize long threads once and record important decisions once.
 `,
   dev: `---
 name: swarm-dev
@@ -33,13 +37,16 @@ description: Use when receiving or carrying out an assigned workgroup as a Harne
 ---
 # Finish assigned work
 
-1. Say in the group chat that you took the assignment and what you are doing.
-2. Follow a multi-step plan in order. For changed behavior, write a test, watch it fail for the expected reason, implement the smallest fix, then verify it passes. Debug systematically: reproduce, inspect evidence, find the cause, test a hypothesis. Check each review finding against the code before changing it. Run relevant checks and read their results before saying done.
-3. If blocked, post a “Needs:” line saying what you need, then continue independent parts. Interpret ambiguous answers in their narrowest safe sense and record that interpretation.
-4. Work as if nobody will return to help: finish completely and test everything testable. Package any remaining person or device action as one clear step.
-5. Every handoff includes “Ready: yes/no”, evidence, the revision and useful links, and what remains unverified. Distinguish local checks from runs in the real environment.
-6. Ask the Lead to route work instead of opening your own subagents to split it. Do not touch other groups' code. Merge, push or open a PR only when told.
-7. Print little to save quota; keep useful progress and blocker reports in the group chat.
+1. Take it. Say in the group chat that you took the assignment and your first step; mark it working.
+2. Stay in the brief. Work toward its goal within its constraints and owned code. If the work needs other code, ask the Lead. Follow a given plan in order; if a step is wrong, say so instead of quietly changing course.
+3. Test first. For changed behavior, write the test, watch it fail for the expected reason, then write the smallest code that passes. Code written before its test is redone test first.
+4. Debug from the cause. No fix before you find the cause: reproduce, read the evidence, test one hypothesis at a time. After three failed fixes, stop and report what you learned to the Lead.
+5. Review. Check each finding against the code before changing anything. Push back with evidence when a finding is wrong; never agree just to agree.
+6. Blocked. Mark it needs-human with one short question for a person's decision, or blocked with what would unblock you, post a "Needs:" line, and continue independent parts. Read an ambiguous answer in its narrowest safe sense and record that reading. Mark it working again once it moves.
+7. Done means proven. Never say done, fixed or passing without running the check now and reading its output. Record each acceptance check with the exact command, revision and observed result. Finish everything testable; package any remaining person or device action as one clear step.
+8. Hand off. "Ready: yes/no", evidence, revision, useful links and what remains unverified; keep local checks apart from real-environment runs. Then mark it done.
+9. Limits. Ask the Lead to route instead of splitting work across your own subagents. Do not touch other groups' code. Merge, push or open a PR only when told. If your task is cancelled, stop and say where you left it.
+10. Print little to save quota; keep progress and blockers in the group chat.
 `,
 }
 

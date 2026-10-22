@@ -22,8 +22,9 @@ describe('built-in Swarm skills', () => {
       expect(prepared.file.startsWith(join(realpathSync(workspace), '.harness', 'runtime'))).toBe(true)
       const text = readFileSync(prepared.file, 'utf8')
       expect(text).toContain(`name: swarm-${role}`)
-      if (role === 'lead') expect(text).toContain('goal, changes, constraints, owned code and acceptance checks')
+      if (role === 'lead') expect(text).toContain('Route every new agent and every assignment')
       else {
+        expect(text).toContain('Test first.')
         expect(text).toContain('Needs:')
         expect(text).toContain("Do not touch other groups' code.")
       }
